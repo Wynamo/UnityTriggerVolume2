@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class MusicPause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource MusicPlayer;
+    private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log(other.gameObject.name);
+
+        MusicPlayer.Pause();
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        MusicPlayer.Play();
+
+
     }
+
+
+
+
+
 }
